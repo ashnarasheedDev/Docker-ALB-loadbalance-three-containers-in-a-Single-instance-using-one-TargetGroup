@@ -18,7 +18,7 @@ Add a route53 record for a domain so a sit Alias to ALB'S Ip.
 **Here is a simple Block diagram illustrates the setup**
 
 ![alt text](https://i.ibb.co/yRDN33M/git-alb.png)
-
+<!--  -->
 ### Step 1- Launch an instance and Install Docker 
 
 - Launch an EC2 instance: Start by launching an EC2 instance that will serve as the host for containers. 
@@ -84,23 +84,28 @@ docker container run --name website3 -d -p 8083:80 --restart always -v $(pwd)/we
 
 ### Step 4 - Create the Application Load Balancer
 
-- Create ALB 
+1. Create ALB 
 
-    Go to the EC2 service in the AWS Management Console.
-    Select "Load Balancers" from the left navigation pane.
-    Click "Create Load Balancer".
-    Select "Application Load Balancer".
-    Configure the load balancer settings such as name, scheme (internet-facing or internal), and IP address type.
-    Select the appropriate VPC and subnets for the load balancer.
-    Configure the security settings by selecting existing security groups or creating new ones.
-    Enable or disable deletion protection as desired.
-    Add tags for better organization and management.
+  - Go to the EC2 service in the AWS Management Console.
+  - Select "Load Balancers" from the left navigation pane.
+  - Click "Create Load Balancer".
+  - Select "Application Load Balancer".
+  - Configure the load balancer settings such as name, scheme (internet-facing or internal), and IP address type.
+  - Select the appropriate VPC and subnets for the load balancer.
+  - Configure the security settings by selecting existing security groups or creating new ones.
+  - Enable or disable deletion protection as desired.
+  - Add tags for better organization and management.
     
-- Configure the listener and ACM certificate:
-   Configure the listener protocol and port(HTTPS 443).
-   Select the target group you created in step 1 as the default action.
-   Click "Add listener" to add the listener.
-   In the "SSL certificate" section, select "Choose a certificate from ACM.
-   Create LoadBalancer
-   Once create, add a listener HTTP:80 where default action is to redirect all HTTP requests to HTTPS.
+2. Configure the listener and ACM certificate:
+
+  - Configure the listener protocol and port(HTTPS 443).
+  -  Select the target group you created in step 1 as the default action.
+  - Click "Add listener" to add the listener.
+  - In the "SSL certificate" section, select "Choose a certificate from ACM.
+  - Create LoadBalancer
+  - Once create, add a listener HTTP:80 where default action is to redirect all HTTP requests to HTTPS.
+
+> <b>Please refer the screenshot below where I Created my ALB</b>
+    
+![alt text](https://i.ibb.co/gmpnBxJ/git-alb.png)
    
