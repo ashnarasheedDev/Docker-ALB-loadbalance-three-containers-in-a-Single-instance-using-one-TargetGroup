@@ -31,5 +31,30 @@ sudo systemctl enable docker
 sudo systemctl restart docker
 ```
 ###  Step 2 - Create 3 containers
+
 Create Docker containers: Create three Docker containers, each serving one website. 
 
+><b>Create container1</b>
+- docker container run: This command is used to run a new Docker container.
+- --name website1: Assigns the name "website1" to the container.
+- -d: Runs the container in detached mode, meaning it runs in the background.
+- -p 8081:80: Maps port 8081 on the host machine to port 80 in the container. This allows accessing the website through port 8081 on the host.
+- --restart always: Specifies that the container should always restart if it stops for any reason.
+- -v $(pwd)/website1/:/usr/local/apache2/htdocs/: Bind Mounts the local directory "website1" (assuming it's in the current working directory) to the container's /usr/local/apache2/htdocs/ directory. This allows the container to serve the website's content from the mounted directory.
+- httpd:alpine: Specifies the Docker image to use for the container, in this case, httpd:alpine, which is a lightweight Apache HTTP Server image based on Alpine Linux.
+
+You can use a similar command to run the other containers for website2 and website3, changing the container name, port mapping, and mounted directory accordingly.
+
+```
+docker container run --name website1 -d -p 8081:80 --restart always -v $(pwd)/website1/:/usr/local/apache2/htdocs/ httpd:alpine
+```
+><b>Create container2</b>
+
+```
+docker container run --name website2 -d -p 8082:80 --restart always -v $(pwd)/website2/:/usr/local/apache2/htdocs/ httpd:alpine
+```
+><b>Create container3</b>
+
+```
+docker container run --name website3 -d -p 8083:80 --restart always -v $(pwd)/website3/:/usr/local/apache2/htdocs/ httpd:alpine
+```
