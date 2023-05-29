@@ -127,3 +127,4 @@ You can see the screenshots below where i got three different websites just by c
 
 ![alt text](https://i.ibb.co/KhCDXSf/web1.png)
 
+![alt text](https://i.ibb.co/PrJH3tv/wb2.png)
