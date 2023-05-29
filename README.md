@@ -77,6 +77,7 @@ docker container run --name website3 -d -p 8083:80 --restart always -v $(pwd)/we
         Repeat these steps for each container and port combination.
     Review the target group settings and click on the "Create target group" button.
     
-    ><b>Please refer the screenshot below where I Created my Target Group</b>
     
-    ![alt text](https://i.ibb.co/26fSKnV/git-tg.png)
+> <b>Please refer the screenshot below where I Created my Target Group</b>
+    
+![alt text](https://i.ibb.co/26fSKnV/git-tg.png)
