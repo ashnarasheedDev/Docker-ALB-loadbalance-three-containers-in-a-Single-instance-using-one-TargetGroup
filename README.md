@@ -58,3 +58,25 @@ docker container run --name website2 -d -p 8082:80 --restart always -v $(pwd)/we
 ```
 docker container run --name website3 -d -p 8083:80 --restart always -v $(pwd)/website3/:/usr/local/apache2/htdocs/ httpd:alpine
 ```
+### Step 3 - Create Target Group
+
+  - Open the AWS Management Console and navigate to the EC2 service.
+  - In the left navigation pane, click on "Target Groups" under the "Load Balancing" section.
+  - Click on the "Create target group" button.
+  - Configure the target group settings:
+        Give the target group a name and optionally provide a description.
+        Select the desired target type, which is usually "Instance" in this case.
+        Choose the protocol and port that the target group will use to communicate with the targets.
+        Select the VPC where your instance resides.
+        Optionally, you can configure health checks for the targets.
+        Click on the "Next" button.
+   - Configure the target group targets:
+        Select the instance where your containers are running as a target.
+        Specify the target's port for each container in the filed mentioned "Ports for the selected instances"(e.g., 8081, 8082, 8083).
+        Click on the "Include as pending below" button after entering port
+        Repeat these steps for each container and port combination.
+    Review the target group settings and click on the "Create target group" button.
+    
+    > <b>Please refer the screensht below where I Created my Target Group</b>
+    
+    
