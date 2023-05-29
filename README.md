@@ -125,5 +125,5 @@ You can see the screenshots below where i got three different websites just by c
 
 ![alt text](https://i.ibb.co/GVykj4H/git-alb-website3.png)
 
-![alt text](https://i.ibb.co/80dJ0FT/git-alb-website1.png)
+
 
