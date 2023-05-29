@@ -7,7 +7,7 @@ I'm creating three containers from httpd:alpine image and deploying three websit
 
 To distinguish the websites when they are loaded, we have edited the index.html file of each website's templates so as it prints website1, website2 and website3 accordingly.
 
-Create a target group: Configure the target group with the appropriate settings, such as the target type (instance or IP), health checks, and protocol. Add targets to the target group
+Create a target group: Configure the target group with the appropriate settings, such as the target type (instance or IP), hAealth checks, and protocol. Add targets to the target group
 
 Create an Application Load Balancer (ALB): Configure it with the desired settings, such as listeners, security groups, and subnets.
 
@@ -109,3 +109,16 @@ docker container run --name website3 -d -p 8083:80 --restart always -v $(pwd)/we
     
 ![alt text](https://i.ibb.co/gmpnBxJ/git-alb.png)
    
+### Step 5 - Configure Route53 Record
+
+- Open the AWS Management Console and navigate to the Route 53 service.
+- In the navigation pane, click on "Hosted zones".
+- Select the hosted zone for the domain "ashna.online" or create a new one if it doesn't exist.
+- Click on "Create Record Set".
+- In the "Name" field, enter "docker.ashna.online".
+- Set the Alias to desired ALB
+
+### Result
+
+While we load the domain name, ALB manages the incoming traffic and distributes it among the containers and as a result we get three websites in preferred algorithm.
+You can see the screenshots below where i got three different websites just by calling **docker.ashna.online**
