@@ -122,3 +122,9 @@ docker container run --name website3 -d -p 8083:80 --restart always -v $(pwd)/we
 
 While we load the domain name, ALB manages the incoming traffic and distributes it among the containers and as a result we get three websites in preferred algorithm.
 You can see the screenshots below where i got three different websites just by calling **docker.ashna.online**
+
+![alt text](https://i.ibb.co/GVykj4H/git-alb-website3.png)
+
+![alt text](https://i.ibb.co/qmCXMbs/git-alb-website2.png)
+
+![alt text](https://i.ibb.co/80dJ0FT/git-alb-website1.png)
