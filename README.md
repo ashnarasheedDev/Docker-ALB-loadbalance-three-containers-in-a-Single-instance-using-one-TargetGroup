@@ -1,4 +1,4 @@
-# Docker-ALB-loadbalance-three-containers-in-a-Single-instance-using-one-TargetGroup
+# Description
 In most load balancing scenarios, we have seen each container is typically deployed on a separate instance. What If we have three containers running on a single EC2 instance, Is it still possible to load balance them using a single target group and an Application Load Balancer (ALB)? 
 
 **Let's see how i create this setup:**
